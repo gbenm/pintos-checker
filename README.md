@@ -1,5 +1,9 @@
 # PintOS Checker
 
+**Importante:** actualmente esta versión no funciona,
+así que vea [este repo](https://github.com/gbenm/pintos-checker-old)
+para utilizar la forma anterior.
+
 Este repositorio contiene los archivos necesarios para construir un github action
 para la evaluación de las 4 fases del proyecto PintOS. Para las personas
 que no conozcan los Github actions a modo de resumen, si instalan este
