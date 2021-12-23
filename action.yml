@@ -5,14 +5,14 @@ branding:
   color: gray-dark
 inputs:
   phase:
-    description: 'Phase to check'
+    description: "Phase to check"
     required: true
-    default: 'threads'
+    default: "threads"
 outputs:
   results:
     description: "results of checker"
 runs:
-  using: 'docker'
-  image: '../../loader.Dockerfile'
+  using: docker
+  image: Dockerfile
   args:
     - ${{ inputs.phase }}
