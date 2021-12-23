@@ -2,6 +2,7 @@
 PINTOSPH=$1
 
 cd $PINTOSPH
+pintos -h
 #make
 #make grade
 pwd
