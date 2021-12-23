@@ -1,0 +1,15 @@
+name: 'Pintos Checker'
+description: 'Build the docker image for grading'
+inputs:
+  phase:
+    description: 'Phase to check'
+    required: true
+    default: 'threads'
+outputs:
+  results:
+    description: "results of work"
+runs:
+  using: 'docker'
+  image: '../../loader.Dockerfile'
+  args:
+    - ${{ inputs.phase }}
