@@ -1,4 +1,4 @@
 from gbenm/pintos
 workdir /root/pintos
-copy . .
+copy ../../ .
 run ls
