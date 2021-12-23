@@ -1,0 +1,7 @@
+#!/bin/bash
+PINTOSPH=$1
+
+cd $PINTOSPH
+make
+make grade
+setOutputFrom build/grade
