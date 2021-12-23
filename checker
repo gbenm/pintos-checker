@@ -1,10 +1,9 @@
 #!/bin/bash
+
 PINTOSPH=$1
 
 cd $PINTOSPH
-pintos -h
-#make
-#make grade
-pwd
-ls
+
+make && make grade
+
 setOutputFrom build/grade
