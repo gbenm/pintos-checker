@@ -1,9 +1,9 @@
 from gbenm/pintos:1.0.0
-arg wpath=/github/workspace
-workdir $wpath
-env PATH="/gbenm-actions:$wpath/utils:${PATH}"
-run echo $PATH
-run ln -sf . ~/pintos
-copy checker /gbenm-actions/checker
-copy setOutputFrom /gbenm-actions/setOutputFrom
+arg wdir=/github/workspace
+arg binPath=/github/workspace
+workdir $wdir
+env PATH="$binPath:$wdir/utils:${PATH}"
+run ln -sf $wdir ~/pintos
+copy checker $binPath/checker
+copy setOutputFrom $binPath/setOutputFrom
 entrypoint ["checker"]
