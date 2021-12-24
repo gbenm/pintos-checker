@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export PINTOSPH=$1
+export HOME=/root
 
 echo $PINTOSPH $HOME
 cd $PINTOSPH
