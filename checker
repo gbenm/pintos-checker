@@ -4,6 +4,7 @@ PINTOSPH=$1
 
 cd $PINTOSPH
 
-make && make grade
+make clean && make && make grade
+cat build/tests/userprog/args-none.errors
 
 setOutputFrom build/grade
