@@ -3,10 +3,8 @@
 export PINTOSPH=$1
 export HOME=/root
 
-echo $PINTOSPH $HOME
 cd $PINTOSPH
 
 make clean && make && make grade
-cat build/tests/userprog/args-none.errors
 
 setOutputFrom build/grade
