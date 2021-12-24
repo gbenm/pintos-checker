@@ -1,12 +1,11 @@
 #!/bin/bash
 
-PINTOSPH=$1
+export PINTOSPH=$1
 
+echo $PINTOSPH $HOME
 cd $PINTOSPH
 
 make clean && make && make grade
 cat build/tests/userprog/args-none.errors
-
-ls ~/pintos
 
 setOutputFrom build/grade
