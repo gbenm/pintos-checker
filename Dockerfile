@@ -6,4 +6,5 @@ env PATH="$binPath:$wdir/utils:${PATH}"
 run rm -r ~/pintos && ln -sf $wdir ~/pintos
 copy checker $binPath/checker
 copy setOutputFrom $binPath/setOutputFrom
+run expand ~
 entrypoint ["checker"]
