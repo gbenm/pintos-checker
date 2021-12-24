@@ -1,4 +1,4 @@
-from gbenm/pintos:1.0.0
+from gbenm/pintos:latest
 arg wdir=/github/workspace
 arg binPath=/gbenm-actions
 workdir $wdir
