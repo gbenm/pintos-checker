@@ -8,6 +8,18 @@ inputs:
     description: "Phase to check"
     required: true
     default: "threads"
+  root:
+    description: "PintOS code path (relative to the project root)"
+    required: true
+    default: .
+  make:
+    description: "Command to execute test in phase folder"
+    required: true
+    default: "make clean && make && make grade"
+  utils_path:
+    description: "Utils path (relative to root input)"
+    required: true
+    default: "utils"
 outputs:
   results:
     description: "results of checker"
@@ -15,4 +27,7 @@ runs:
   using: docker
   image: Dockerfile
   args:
+    - ${{ inputs.root }}
     - ${{ inputs.phase }}
+    - ${{ inputs.utils_path }}
+    - ${{ inputs.make }}

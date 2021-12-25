@@ -1,10 +1,23 @@
 #!/bin/bash
 
-export PINTOSPH=$1
-export HOME=/root
+PINTOSDIR=$1
+PINTOSPH=$2
+UTILSPATH=$3
+MAKE=$4
+
+UTILS="/gbenm-actions/utils"
+CODEPATH="/github/workspace"
+
+export HOME="/root"
+export PINTOS_HOME=$CODEPATH
+export PINTOSPH=$PINTOSDIR/$PINTOSPH
 
 cd $PINTOSPH
 
-make clean && make && make grade
+ln -s $CODEPATH/$PINTOSDIR/$UTILSPATH $UTILS
+rm -r $HOME/pintos
+ln -s $CODEPATH $HOME/pintos
+
+bash -c "$MAKE"
 
 setOutputFrom build/grade
