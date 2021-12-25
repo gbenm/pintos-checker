@@ -14,7 +14,17 @@ Visite esta [página](https://gbenm.gitbook.io/pintos-github-checker/).
 ### Github Action
 #### Versión mínima
 ```yaml
-...
+name: 'Calificación de las fases del proyecto'
+
+on: [push]
+
+jobs:
+  threads:
+    name: 'Fase: Threads'
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: 'Clonando repositorio'
+        uses: 'actions/checkout@v2'
       - name: Pintos Checker
         id: phase
         uses: gbenm/pintos-checker@v1
@@ -25,7 +35,17 @@ Visite esta [página](https://gbenm.gitbook.io/pintos-github-checker/).
 ```
 #### Versión completa
 ```yaml
-...
+name: 'Calificación de las fases del proyecto'
+
+on: [push]
+
+jobs:
+  threads:
+    name: 'Fase: Threads'
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: 'Clonando repositorio'
+        uses: 'actions/checkout@v2'
       - name: Pintos Checker
         id: phase
         uses: gbenm/pintos-checker@v1
@@ -45,10 +65,12 @@ se califica.
 proyecto, no necesita colocarlo. Si por ejemplo, el código
 está en la carpeta **src**:
 ```yaml
-...
-        with:
-          ...
-          root: "src"
+- name: Pintos Checker
+  id: phase
+  uses: gbenm/pintos-checker@v1
+  with:
+    # ...
+    root: "src"
 ```
 - **utils_path** es la carpeta relativa a **root** (el que configuró)
 que contiene los scripts del proyecto (ejemplo: pintos, Pintos.pm, etc).
