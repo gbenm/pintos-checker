@@ -1,7 +1,7 @@
 #/bin/bash
-MAX=$(($(getconf ARG_MAX)/4 - 1000))
-echo "***$MAX"
+MAX=10000
 GRADE=`head -c $MAX $1`
+GRADE="$GRADE\n...\n"
 GRADE="${GRADE//'%'/'%25'}"
 GRADE="${GRADE//$'\n'/'%0A'}"
 GRADE="${GRADE//$'\r'/'%0D'}"
