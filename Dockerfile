@@ -1,4 +1,4 @@
-FROM gbenm/pintos:beta
+FROM gbenm/pintos:latest
 ARG wdir=/github/workspace
 ARG binPath=/gbenm-actions
 WORKDIR $wdir
