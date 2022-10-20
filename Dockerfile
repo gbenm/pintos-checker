@@ -1,8 +1,8 @@
-from gbenm/pintos:latest
-arg wdir=/github/workspace
-arg binPath=/gbenm-actions
-workdir $wdir
-env PATH="$binPath:$binPath/utils:${PATH}"
-copy checker $binPath/checker
-copy setOutputFrom $binPath/setOutputFrom
-entrypoint ["checker"]
+FROM gbenm/pintos:latest
+ARG wdir=/github/workspace
+ARG binPath=/gbenm-actions
+WORKDIR $wdir
+ENV PATH="$binPath:$binPath/utils:${PATH}"
+COPY checker $binPath/checker
+COPY setOutputFrom $binPath/setOutputFrom
+ENTRYPOINT ["checker"]
