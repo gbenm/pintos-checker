@@ -2,6 +2,6 @@
 MAX=10000
 GRADE=`head -c $MAX $1`
 GRADE="$GRADE..."
-echo "results<<@EOF@"
+echo "results<<@EOF@" >> $GITHUB_OUTPUT
 echo $GRADE >> $GITHUB_OUTPUT
-echo "@EOF@"
+echo "@EOF@" >> $GITHUB_OUTPUT
