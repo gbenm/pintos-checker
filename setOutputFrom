@@ -2,4 +2,6 @@
 MAX=10000
 GRADE=`head -c $MAX $1`
 GRADE="$GRADE..."
+GRADE="${GRADE//$'\n'/'%0A'}"
+GRADE="${GRADE//$'\r'/'%0D'}"
 echo "results=$GRADE" >> $GITHUB_OUTPUT
