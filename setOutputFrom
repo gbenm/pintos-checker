@@ -4,4 +4,6 @@ GRADE=`head -c $MAX $1`
 GRADE="$GRADE..."
 GRADE="${GRADE//$'\n'/'%0A'}"
 GRADE="${GRADE//$'\r'/'%0D'}"
+GRADE="${GRADE//"'"/%27}"
+GRADE="${GRADE//'`'/'%60'}"
 echo "results=$GRADE" >> $GITHUB_OUTPUT
